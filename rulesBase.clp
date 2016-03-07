@@ -57,7 +57,6 @@
 =>
     (bind ?int(intersect ?i ?k))
     (retract ?t)
-    (printout t ?int crlf)
     (assert (candidate ?c (length ?i)))
     
 )
@@ -71,11 +70,10 @@
 )
 
 (defrule print_bestcandidate
-    (salience -10)
-    (candidate ?n ?p)
+    (declare (salience -10))
+    (candidate $?s)
     =>
-    (retract ?b)
-    (printout t ?n ?p crlf)
+    (printout t ?s crlf)
 )
 
 ;Working rules.

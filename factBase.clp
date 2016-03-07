@@ -29,12 +29,13 @@
 	(travel_destiny (name Madrid) (interestingPoint cultural entertraining landscape) (countries Spain))
 	(travel_destiny (name Amazonas) (interestingPoint landscape) (countries Brasil))
 	(travel_destiny (name Pirineos) (interestingPoint entertraining landscape) (countries France Spain))
+        (travel_destiny (name Osaka) (interestingPoint cultural landscape) (countries Japan))
 )
 
 (deffacts user
     (travel_preferences
         (maxCost 3)
-        (language euskera)
-        (travelKind entertraining)
+        (language japanese)
+        (travelKind cultural)
     )
 )
