@@ -68,11 +68,10 @@
     (test (< ?l1 ?l2))
     =>
     (retract ?c1)
-    (assert (bestCandidate))
 )
 
 (defrule print_bestcandidate
-    ?b <- (bestCandidate)
+    (salience -10)
     (candidate ?n ?p)
     =>
     (retract ?b)
