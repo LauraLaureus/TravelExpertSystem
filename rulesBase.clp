@@ -14,13 +14,28 @@
             (countries $? ?n $?)
     )
 =>
-    (assert (candidate ?s))
+    (assert (second ?s))
 )
 
 ;Select those destinies which contains almost one of languages which user can speak.
-;(defrule language_matching
-;=>
-;)
+(defrule language_matching
+    ?ad <- (second ?c)
+    (country
+        (name ?t)
+        (officialLanguages $? ?o $?)
+    )
+    (travel_destiny
+        (name ?c)
+        (countries $? ?t $?)
+    )
+    (travel_preferences
+        (language $? ?o $?)
+    )
+=>
+    (retract ?ad)
+    (assert (third ?c))
+
+)
 ;Select those countries with bigger number of destinies that have the same kind than user travel kind.
 ;(defrule country_selection
 ;=>
